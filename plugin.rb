@@ -63,9 +63,9 @@ after_initialize do
           '<div class="discourse-hide-old-text-blur">' +
           SiteSetting.hide_old_text_replacement_text * copies +
           '</div>'
+      else
+        super
       end
-    else
-      super
     end
 
 
