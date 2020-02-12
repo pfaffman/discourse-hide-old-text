@@ -63,9 +63,7 @@ after_initialize do
             '</div>'
         end
       else
-        '<div class="discourse-hide-old-text">' +
-          super
-        '</div>'
+        super
       end
     end
 
