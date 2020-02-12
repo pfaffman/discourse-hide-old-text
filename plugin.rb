@@ -49,14 +49,16 @@ after_initialize do
           super
         else
           link = ""
-          if scope.current_user
-            # logged in user gets signup link
-            link = "<a href=\"#{SiteSetting.hide_old_text_signup_url}\">#{SiteSetting.hide_old_text_signup_text}</a>\n<br />\n<br />\n"
-          else
-            # guest gets login link
-            link = "<a href=\"#{SiteSetting.hide_old_text_login_url}\">#{SiteSetting.hide_old_text_login_text}</a>\n<br />\n<br />\n"
+          if post_number == 2
+            if scope.current_user
+              # logged in user gets signup link
+              link = "<a href=\"#{SiteSetting.hide_old_text_signup_url}\">#{SiteSetting.hide_old_text_signup_text}</a>\n<br />\n<br />\n"
+            else
+              # guest gets login link
+              link = "<a href=\"#{SiteSetting.hide_old_text_login_url}\">#{SiteSetting.hide_old_text_login_text}</a>\n<br />\n<br />\n"
+            end
           end
-
+          end
           link +
             '<div class="discourse-hide-old-text-blur">' +
             SiteSetting.hide_old_text_replacement_text * copies +

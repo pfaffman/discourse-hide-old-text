@@ -19,7 +19,7 @@ plugins:
     default: "/signup"
     client: true
   hide_old_text_login_text:
-    default: "You must log in to this post"
+    default: "You must log in to see this post"
     client: true
   hide_old_text_login_url:
     default: "/login"
