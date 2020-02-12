@@ -42,13 +42,13 @@ after_initialize do
       copies = 1 + object.raw.length / SiteSetting.hide_old_text_replacement_text.length
       puts "copies: #{copies}"
       if SiteSetting.discourse_hide_old_text_enabled &&
+         link = ""
          post_number > 1 &&
          topic.created_at < SiteSetting.hide_old_text_days.days.ago
         if ( scope.current_user &&
              !(scope.current_user.group_ids & allowed_groups).empty? )
           super
         else
-          link = ""
           if post_number == 2
             if scope.current_user
               # logged in user gets signup link
