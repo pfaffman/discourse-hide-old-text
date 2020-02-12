@@ -58,16 +58,16 @@ after_initialize do
               link = "<a href=\"#{SiteSetting.hide_old_text_login_url}\">#{SiteSetting.hide_old_text_login_text}</a>\n<br />\n<br />\n"
             end
           end
-          end
-          link +
-            '<div class="discourse-hide-old-text-blur">' +
-            SiteSetting.hide_old_text_replacement_text * copies +
-            '</div>'
         end
-      else
-        super
+        link +
+          '<div class="discourse-hide-old-text-blur">' +
+          SiteSetting.hide_old_text_replacement_text * copies +
+          '</div>'
       end
+    else
+      super
     end
+
 
     # def last_answerer
     #   object.topic.last_answerer
