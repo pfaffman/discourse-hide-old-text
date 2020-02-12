@@ -37,19 +37,20 @@ after_initialize do
     end
 
     def cooked
-      puts "finding topic: #{object.topic_id}"
+      puts "\n\nfinding this topic: #{object.topic_id}\n"
       topic = Topic.find(object.topic_id)
       copies = 1 + object.raw.length / SiteSetting.hide_old_text_replacement_text.length
-      puts "copies: #{copies}"
+      link = ""
+      puts "\n\nType: #{object.archetype}\n\n"
       if SiteSetting.discourse_hide_old_text_enabled &&
-         link = ""
-         post_number > 1 &&
+         (post_number > 1 || object.archetype == "private_message") &&
          topic.created_at < SiteSetting.hide_old_text_days.days.ago
+        puts "This is processed."
         if ( scope.current_user &&
              !(scope.current_user.group_ids & allowed_groups).empty? )
           super
         else
-          if post_number == 2
+          if (post_number == 2 && object.archetype != "private_message") || (post_number == 1 && object.archetype == "private_message")
             if scope.current_user
               # logged in user gets signup link
               link = "<a href=\"#{SiteSetting.hide_old_text_signup_url}\">#{SiteSetting.hide_old_text_signup_text}</a>\n<br />\n<br />\n"

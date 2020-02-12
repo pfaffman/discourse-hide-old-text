@@ -13,7 +13,7 @@ plugins:
     default: "You must pay to play."
     client: true
   hide_old_text_signup_text:
-    default: "Click here to subscribe and see this post"
+    default: "Click here to subscribe and see this message"
     client: true
   hide_old_text_signup_url:
     default: "/signup"
