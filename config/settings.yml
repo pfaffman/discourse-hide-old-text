@@ -1,0 +1,26 @@
+plugins:
+  discourse_hide_old_text_enabled:
+    default: false
+    client: true
+  hide_old_text_days:
+    default: 7
+    client: true
+  hide_old_text_allowed_groups:
+    client: true
+    default: ""
+    type: group_list
+  hide_old_text_replacement_text:
+    default: "You must pay to play."
+    client: true
+  hide_old_text_signup_text:
+    default: "Click here to subscribe and see this post"
+    client: true
+  hide_old_text_signup_url:
+    default: "/signup"
+    client: true
+  hide_old_text_login_text:
+    default: "You must log in to this post"
+    client: true
+  hide_old_text_login_url:
+    default: "/login"
+    client: true

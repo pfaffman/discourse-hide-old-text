@@ -1,0 +1,11 @@
+en:
+  site_settings:
+    discourse_hide_old_text_enabled: "Enable discourse-hide-old-text plugin"
+    hide_old_text_days: Hide text older than this many days
+    hide_old_text_allowed_groups: Groups allowed to read old text
+    discourse_hide_old_text_enabled: Enable the hide old text plugin?
+    hide_old_text_replacement_text: Text to display for private text.
+    hide_old_text_signup_text: Text to display for requesting signup
+    hide_old_text_signup_url: URL for subscribing
+    hide_old_text_login_text: Text to display for requesting login
+    hide_old_text_login_url: URL for subscribing
